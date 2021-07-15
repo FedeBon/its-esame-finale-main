@@ -1,0 +1,3 @@
+[submodule "Simulazione"]
+	path = Simulazione
+	url = https://github.com/TheCeolo/SimulazioneAnuglar.git    
