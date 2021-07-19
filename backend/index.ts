@@ -29,8 +29,8 @@ app.register(swagger.default, {
   routePrefix: '/api',
   swagger: {
     info: {
-      title: '###Esame ITS 2021',
-      description: '###Api Esame',
+      title: 'Esame ITS 2021',
+      description: 'Api Esame',
       version: '1.0.0'
     },
     host: '127.0.0.1:3000',
@@ -42,37 +42,67 @@ app.register(swagger.default, {
 })
 
 // CHIAMATA GET PER RICEVERE I DATI
-app.get("/pippo", (req, reply) => {//###CAMBIA PIPPO!
+app.get("/meteturistiche", (req, reply) => {
   reply
-    .code(200)  // => IL CODICE CHE VIENE TORNATO
+    .code(200)  
     .header('Content-Type', 'application/json; charset=utf-8')
     .send(
       { 
-        name: '###NOME',                    //  |  =>
-        theme: '###THEME' ,                 //  |  =>  I CAMPI CHE VERRANNO TORNATI CON LA CHIAMATA `GET`
-        attraction: '###ATTRACTION',        //  |  =>  PUOI ANCHE TORNARE UN ARRAY DI DATI VOLENDO, SAREBBE PIU' 'REALE'
-        location: '###LOCATION'             //  |  =>
+        name: 'Roma',                  
+        positionMaps: 'pos'
+      }
+    )
+})
+
+app.get("/attrazioni", (req, reply) => {
+  reply
+    .code(200)  
+    .header('Content-Type', 'application/json; charset=utf-8')
+    .send(
+      { 
+        name: 'colosseo',              
+        city: 'Rome' ,                       
+        persone_entrate: '15',       
+        persone_uscite: '10',            
+        persone_presenti: '5',
+        permanenza_media: '10'              //in minuti
+      },
+    )
+})
+
+app.get("/dettaglioattrazione/:id", (req, reply) => {
+  reply
+    .code(200)  
+    .header('Content-Type', 'application/json; charset=utf-8')
+    .send(
+      { 
+        name: 'colosseo',              
+        city: 'Rome' ,                       
+        persone_entrate: '15',       
+        persone_uscite: '10',            
+        persone_presenti: '5',
+        permanenza_media: '10'              //in minuti
       }
     )
 })
 
 // CHIAMATA POST PER INSERIRE I DATI
-app.post("/pippo", {//###CAMBIA PIPPO!
+app.post("/registrazione", {
     schema: { 
       params: {
         type: "object",
         properties: {
           nome: {
             type: "string",
-            description: "###Inserire descrizione chiamata POST (Ex: 'Inserire Nome')"
+            description: "Inserire nome"
           },
           cognome: {
             type: "string",
-            description: "###Inserire descrizione chiamata POST"
+            description: "inserire cognome"
           },
-          numero: {
-            type: "number",  // esempio aggiunta di un numero
-            description: "###Inserire descrizione chiamata POST"
+          password: {
+            type: "string", 
+            description: "inserire password"
           }
         }
       } 
@@ -81,54 +111,11 @@ app.post("/pippo", {//###CAMBIA PIPPO!
     reply
       .code(200)  // => IL CODICE CHE VIENE TORNATO
       .send({
-        message: "###Data added succesfully!"
+        message: "Data added succesfully!"
       })
   }
 )
 
-// CHIAMATA PUT PER MODIFICARE I DATI
-app.put("/pippo/:name", {
-  schema: { 
-    params: {
-      type: "object",
-      properties: {
-        nome: {
-          type: "string",
-          description: "###Inserire descrizione chiamata POST (Ex: 'Inserire Nome da cambiare')"
-        }
-      }
-    } 
-  }
-}, (req, reply) => {//###CAMBIA PIPPO!
-  reply
-    .code(200)  // => IL CODICE CHE VIENE TORNATO
-    .send({
-      message: "###Data updated"
-    })
-  }
-)
-
-// CHIAMATA DELETE PER ELIMINARE I DATI
-app.delete("/pippo/:name", {
-  schema: { 
-    params: {
-      type: "object",
-      properties: {
-        nome: {
-          type: "string",
-          description: "###Inserire descrizione chiamata POST (Ex: 'Inserire Nome dell'utente da eliminare')"
-        }
-      }
-    } 
-  }
-}, (req, reply) => {//###CAMBIA PIPPO!
-  reply
-    .code(200)  // => IL CODICE CHE VIENE TORNATO
-    .send({
-      message: "###User deleted succesfully!"
-    })
-  }
-)
 
 app.listen(3000, err => {
   if (err) throw err

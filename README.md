@@ -1,5 +1,9 @@
-# IStruzioni Compilazione Progetto Angular
+# iSTRUZIONI PER HTML
+1.entrare nella cartella HTML + CSS e cliccare sul file html
 
+
+
+# IStruzioni Compilazione Progetto Angular
 1. Se non presente, scarica Nodejs (LTS) da questo link `https://nodejs.org/it/`
 2. Apri la cartella del progetto (quella in cui è presente questo file)
 3. Tenendo premuto `SHIFT`, premi il tasto destro del mouse su uno spazio vuoto della finestra (NON SU I FILES!)
@@ -7,3 +11,9 @@
 5. Digita `npm i`
 6. Una volta terminato il processo digita `ng serve`
 7. Apri un qualsiasi browser e inserisci nella barra degli indirizzi il seguente link `http://localhost:4200`
+
+
+
+# istruzioni parte API 
+1. aprire il file index.ts
+2. seguire le istruzioni al suo interno
