@@ -9,7 +9,7 @@
 // POI, SEMPRE SU UN NUOVO TERMINALE (`CTRL` + `SHIFT` + `ò`) SCRIVERE : ` nodemon . `
 // POI, SEMPRE SU UN NUOVO TERMINALE (`CTRL` + `SHIFT` + `ò`) SCRIVERE : ` tsc -w index.ts `
 
-// OPLA', IL GIOCO E' FATTO, ANDATE SUL BROWSER E SCRIVETE SULLA BARRA DEGLI INDIRIZZI  ` http://127.0.0.1:3000/api `  || NOTA BENE: SE SI CAMBIA RIGA 29 (routePrefix: '/api',), NON SI DOVRA' PIU METTERE  ..1:3000/API MA ..1:3000/PAROLA-CHE-HAI-SCRITTO-AL-POSTO-DI-API
+// ORA RIMANE SOLO DA SCRIVERE SULLA BARRA DEGLI INDIRIZZI  ` http://127.0.0.1:3000/api `
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////                                                                                                         //

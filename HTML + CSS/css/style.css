@@ -1,3 +1,7 @@
+h1{
+  margin-bottom: 2vh;
+}
+
 .img-card{
     object-fit:cover;
     height:30vh;
@@ -97,3 +101,18 @@
     font-size:13px;
     margin-bottom:0;
   }
+
+  .contenuto{
+    margin-left: 10vh; 
+    margin-right: 10vh;
+    min-height: 70vh;
+  }
+
+.supercard{
+  display: flex; 
+  justify-content: space-around;
+}
+
+.card{
+  width: 30vw;
+}
